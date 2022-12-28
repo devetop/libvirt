@@ -1,0 +1,4 @@
+<memoryBacking>
+  <access mode="shared"/>
+  <source type="memfd"/>
+</memoryBacking>
