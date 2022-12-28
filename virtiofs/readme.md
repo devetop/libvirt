@@ -24,4 +24,5 @@ virsh attach-device --domain <domain> --file fs.xml  --live
 
 OUTPUT:
 [root@srv1 ~]# virsh attach-device --domain domain --file fs.xml  --live
+
 Device attached successfully
