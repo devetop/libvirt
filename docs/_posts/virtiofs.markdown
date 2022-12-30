@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "virtiofs"
-#date:  
-#categories: jekyll update
+date: 2022-12-30 22:04:00 +0700
+categories: jekyll update
 ---
 
 
