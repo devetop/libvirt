@@ -1,4 +1,9 @@
 {% highlight ruby %}
 {% endhighlight %}
+
 ```sh
 ```
+buat post
+jekyll post "My New Post"
+
+
