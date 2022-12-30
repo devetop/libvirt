@@ -6,4 +6,6 @@
 buat post
 jekyll post "My New Post"
 
+buat page
+jekyll page "My New Page"
 

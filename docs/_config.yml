@@ -30,7 +30,7 @@ url: "https://devetop.github.io" # the base hostname & protocol for your site, e
 github_username:  devetop
 
 # Build settings
-theme: minima
+theme: Architect
 plugins:
   - jekyll-feed
 
