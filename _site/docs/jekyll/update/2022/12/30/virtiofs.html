@@ -1,0 +1,30 @@
+<p>Buat xml memorybacking</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virt-xml &lt;domain&gt; <span class="nt">--edit</span> <span class="nt">--memorybacking</span> access.mode<span class="o">=</span>shared,source.type<span class="o">=</span>memfd
+</code></pre></div></div>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@srv1 ~]# virt-xml domain <span class="nt">--edit</span> <span class="nt">--memorybacking</span> access.mode<span class="o">=</span>shared,source.type<span class="o">=</span>memfd
+Domain <span class="s1">'cent8-vm1'</span> defined successfully.
+Changes will take effect after the domain is fully powered off.
+</code></pre></div></div>
+<p>Lalu poweroff VM dan start kembali</p>
+
+<p>Selanjutnya buat xml untuk virtiofs</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virt-xml &lt;domain&gt; <span class="nt">--build-xml</span> <span class="nt">--print-xml</span> <span class="nt">--filesystem</span> /mnt/iso/,isoblk,driver.type<span class="o">=</span>virtofs,accessmode<span class="o">=</span>passthrough
+</code></pre></div></div>
+<p>Output</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="n">root</span><span class="vi">@srv1</span> <span class="o">~</span><span class="p">]</span><span class="c1"># virt-xml domain --build-xml --print-xml --filesystem /mnt/iso/,isoblk,driver.type=virtofs,accessmode=passthrough</span>
+<span class="o">&lt;</span><span class="n">filesystem</span> <span class="n">accessmode</span><span class="o">=</span><span class="s2">"passthrough"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"mount"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">source</span> <span class="n">dir</span><span class="o">=</span><span class="s2">"/mnt/iso/"</span><span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">target</span> <span class="n">dir</span><span class="o">=</span><span class="s2">"isoblk"</span><span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">driver</span> <span class="n">type</span><span class="o">=</span><span class="s2">"virtofs"</span><span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="sr">/filesystem&gt;</span></code></pre></figure>
+
+<p>Attach ke live VM dengan perintah berikut</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virsh attach-device <span class="nt">--domain</span> &lt;domain&gt; <span class="nt">--file</span> fs.xml  <span class="nt">--live</span>
+</code></pre></div></div>
+
+<p>Output</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>root@srv1 ~]# virsh attach-device <span class="nt">--domain</span> domain <span class="nt">--file</span> fs.xml  <span class="nt">--live</span>
+Device attached successfully
+</code></pre></div></div>
+
