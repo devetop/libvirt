@@ -1,7 +1,4 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
-.copy-code-button {
-  display: block;
-}
 
 @font-face {
   font-family: 'KaTeX_AMS';
