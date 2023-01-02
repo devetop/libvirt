@@ -1,5 +1,0 @@
-<filesystem accessmode="passthrough" type="mount">
-  <source dir="/mnt/iso/"/>
-  <target dir="isoblk"/>
-  <driver type="virtofs"/>
-</filesystem>
