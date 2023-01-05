@@ -1,0 +1,19 @@
+<network>
+  <name>br-ex</name>
+  <uuid>479ff799-3d27-44a6-907d-6d7a8a9399c7</uuid>
+  <forward mode='route'/>
+  <bridge name='br-ex' stp='off' delay='0'/>
+  <mac address='ac:10:bd:0c:4b:ee'/>
+  <dns>
+    <host ip='172.13.13.166'>
+      <hostname>git.srv1.de</hostname>
+    </host>
+  </dns>
+  <ip address='172.13.13.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='172.13.13.128' end='172.13.13.250'/>
+      <host mac='52:54:00:48:1f:f9' name='httpd' ip='172.13.13.230'/>
+    </dhcp>
+  </ip>
+</network>
+

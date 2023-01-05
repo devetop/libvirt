@@ -1,0 +1,8 @@
+<network>
+  <name>test</name>
+  <uuid>b62e94fb-293b-4825-9f32-cc24d9bfe09f</uuid>
+  <forward mode='bridge'/>
+  <bridge name='br0'/>
+  <virtualport type='openvswitch'/>
+</network>
+

@@ -1,0 +1,7 @@
+<network>
+  <name>br-int</name>
+  <uuid>4d3ff9e7-a56f-49f7-8081-62a905a599e7</uuid>
+  <bridge name='br-int' stp='on' delay='0'/>
+  <mac address='52:54:00:4e:ca:fa'/>
+</network>
+

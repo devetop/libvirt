@@ -1,0 +1,17 @@
+<network>
+  <name>br-nat</name>
+  <uuid>9bf141af-22fe-46ef-adb4-8e22c330f479</uuid>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='br-nat' stp='on' delay='0'/>
+  <mac address='ac:10:bd:0c:4b:ee'/>
+  <ip address='172.12.12.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='172.12.12.2' end='172.12.12.254'/>
+    </dhcp>
+  </ip>
+</network>
+
